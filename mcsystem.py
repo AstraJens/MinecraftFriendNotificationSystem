@@ -4,9 +4,18 @@ import requests
 import board
 import neopixel
 from mcstatus import MinecraftServer
+# since the "mcstatus Version 9.0.2" you must use instead of "MinecraftServer" "JavaServer" or "BedrockServer"
+# from mcstatus import JavaServer
+# from mcstatus import BedrockServer
+
+
 
 # If you know the host and port, you may skip this and use MinecraftServer("example.org", 1234)
 server = MinecraftServer.lookup("minecraft.geeksmithing.com")
+# since the "mcstatus Version 9.0.2" you must use instead of "MinecraftServer" "JavaServer" or "BedrockServer"
+# server = JavaServer.lookup("minecraft.geeksmithing.com")
+# server = BedrockServer.lookup("minecraft.geeksmithing.com")
+
 
 # this enables a test mode to light up all letters at once when unit is powered on.  This was helpful when building the unit
 # Set this variable to 0 to disable test mode
@@ -162,8 +171,8 @@ def E_colorize():
 def E_colorize_nether():
     pixels[5] =(255,42,0)
     pixels[6] =(255,42,0)
-    pixels[26]=(255,162,0)
     pixels[25]=(255,162,0)
+    pixels[26]=(255,162,0)
     pixels[39]=(255,220,22)
     pixels[40]=(255,220,22)
     pixels.show()
